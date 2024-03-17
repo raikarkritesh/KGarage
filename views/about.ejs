@@ -1,0 +1,16 @@
+<%-include('includes/header.ejs') -%>
+<!-- Displaying nav bar according to the user login status. 
+    navadmin.ejs is the nav bar for admin while navguest.ejs is the nav bar for guest -->
+<% 
+if(user == 'admin'){%>
+    <%-include('includes/navadmin.ejs') -%><%
+}
+else if (user == 'undefined' || user == 'guest'){%>
+    <%-include('includes/navguest.ejs') -%><%
+}
+%>
+
+<h2>About me</h2>
+<p>K's garage has been modifying cars since 1999. </p>
+
+<%-include('includes/footer.ejs') -%>

@@ -1,0 +1,35 @@
+<%-include('includes/header.ejs') -%> 
+<%-include('includes/navadmin.ejs') -%> 
+
+<!-- Displaying the form with values taken from the database -->
+<section class="form">
+    <h2> Edit request </h2>
+    <form action="/edited" method="POST" enctype="multipart/form-data">
+        <input type="hidden" name="_id" value="<%= _id %>">
+        
+        <div class="wrap">
+            <label for="name" > Name: </label>
+            <input type="text" placeholder="Enter your name" name="name" id="name" value="<%= name %>">
+        </div>
+
+        <div class="wrap">
+            <label for="phoneEmail" > Phone/Email: </label>
+            <input type="text" placeholder="Enter contact number or email" name="phoneEmail" id="phoneEmail" value="<%= phoneEmail %>">    
+        </div>
+        
+        <div class="wrap">
+            <label for="carImage" > Photo: </label>
+            <input type="file" id="carImage" name="carImage">
+        </div>
+
+        <div class="wrap">
+            <label for="carDescription"> Car Description: </label>
+            <textarea name="carDescription" id="carDescription"  ><%= carDescription %></textarea>
+        </div>
+
+        <div class="wrap">
+            <input type="submit" value="Submit!">
+        </div>
+    </form>
+</section>
+<%-include('includes/footer.ejs') -%> 

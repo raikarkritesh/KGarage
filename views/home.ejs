@@ -1,0 +1,28 @@
+<%-include('includes/header.ejs') -%> 
+<!-- Displaying nav bar according to the user login status. 
+    navadmin.ejs is the nav bar for admin while navguest.ejs is the nav bar for guest -->
+<% 
+if(user == 'admin'){%>
+    <%-include('includes/navadmin.ejs') -%><%
+}
+else if (user == 'undefined' || user == 'guest'){%>
+    <%-include('includes/navguest.ejs') -%><%
+}
+%>
+''
+<!-- Displaying the home page -->
+<section class="titleImage">
+    <img src="images/cars2.jpg" alt="Image of the cosmos">
+    <figcaption> Credits : By Leif Bergerson: https://www.pexels.com/photo/white-bmw-sports-car-on-a-parking-lot-during-sunset-9545550/ </figcaption>
+    <!--  cars2 image by Leif Bergerson: https://www.pexels.com/photo/white-bmw-sports-car-on-a-parking-lot-during-sunset-9545550/ -->
+</section>
+
+<section class="introduction">
+    <h2>Welcome to K's Garage.</h2>
+    <p>
+        We do all sorts of modification to any sort of car that your mind desires. 
+        Just fill up the form bellow to get started on your dream build.
+    </p>
+</section>
+
+<%-include('includes/footer.ejs') -%>

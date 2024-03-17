@@ -1,0 +1,37 @@
+<%-include('includes/header.ejs') -%> 
+<!-- If admin is logged in display that user is logged in and to login with other username you need to logout -->
+<!-- Displaying nav bar according to the user login status. 
+    navadmin.ejs is the nav bar for admin while navguest.ejs is the nav bar for guest -->
+<% 
+if(user == 'admin'){%>
+    <%-include('includes/navadmin.ejs') -%>
+    <section class="login">
+        <h2> Admin is already logged in. Logout to login with different username</h2>
+    </section>
+    <%
+}
+else if (user == 'undefined' || user == 'guest'){%>
+    <%-include('includes/navguest.ejs') -%>
+    <section class="login">
+        <h2> Login </h2>
+        <form action="logingIn" method="post">
+            <div class="wrap">
+                <label for="username" > Username: </label>
+                <input type="text" placeholder="Enter username" name="username" >
+            </div>
+    
+            <div class="wrap">
+                <label for="password" > Password: </label>
+                <input type="password" placeholder="Enter password" name="password" >    
+            </div>
+    
+            <div class="wrap">
+                <input type="submit" value="login!">
+            </div>
+        </form>
+    </section>
+    <%
+}
+%>
+
+<%-include('includes/footer.ejs') -%> 

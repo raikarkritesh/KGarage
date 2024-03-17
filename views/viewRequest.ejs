@@ -1,0 +1,25 @@
+<%-include('includes/header.ejs') -%> 
+<%-include('includes/navadmin.ejs') -%> 
+
+<!-- Displaying the selected request -->
+<section class="viewRequest">
+    <h2> View </h2>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Email/Phone</th>
+            <th>Uploaded Image</th>
+            <th>Car Description</th>
+        </tr>
+
+        <tr>
+            <td><%= name %></td>
+            <td><%= phoneEmail %></td>
+            <td><img style="max-width: 50%;" src="/uploads/<%= carImageName %>" alt="Uploaded image displayed here"></td>
+            <td><%- carDescription %></td>
+        </tr>
+    </table>
+</section>
+
+
+<%-include('includes/footer.ejs') -%> 

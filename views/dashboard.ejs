@@ -1,0 +1,42 @@
+<%-include('includes/header.ejs') -%> 
+<%-include('includes/navadmin.ejs') -%> 
+
+<!-- Displaying all requests in a table -->
+<section class="dashboard">
+    <h2> Dashboard </h2>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email/Phone</th>
+            <th>Uploaded Image</th>
+            <th>View</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+    
+        <% 
+            for(carRequest of carRequests){
+                %>
+                <tr>
+                    <td><%= carRequest._id %></td>
+                    <td><%= carRequest.name %></td>
+                    <td><%= carRequest.phoneEmail %></td>
+                    <td><img style="max-width: 50%;" src="/uploads/<%= carRequest.carImageName %>" alt=""></td>
+                    <td>
+                        <a class="button" href="/view/<%= carRequest._id %>">View</a>
+                    </td>
+                    <td>
+                        <a class="button" href="/edit/<%= carRequest._id %>">Edit</a>
+                    </td>
+                    <td>
+                        <a class="button" href="/delete/<%= carRequest._id %>">Delete</a>
+                    </td>
+                </tr>
+                <%
+            }
+        %>
+    </table>
+</section>
+
+<%-include('includes/footer.ejs') -%> 
